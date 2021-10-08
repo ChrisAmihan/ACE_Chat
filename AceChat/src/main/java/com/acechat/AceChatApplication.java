@@ -8,6 +8,7 @@ public class AceChatApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AceChatApplication.class, args);
+		
 	}
 
 }
