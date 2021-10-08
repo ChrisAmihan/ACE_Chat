@@ -27,7 +27,7 @@ public class UserService {
 	}
 	
 	public void merge(User user) {
-		System.out.println(user.getUserid());
 		this.userRepository.setUserInfoById(user.getName(),user.getPassword(),user.getProfilepic(),user.getUserid());;
 	}
+	
 }

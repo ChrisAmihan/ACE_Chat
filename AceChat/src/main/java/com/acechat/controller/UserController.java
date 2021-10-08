@@ -37,5 +37,5 @@ public class UserController {
 		this.userService.merge(user);
 	}
 	
-	
+	//TODO logout talk to alex
 }
