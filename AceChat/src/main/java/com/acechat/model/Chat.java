@@ -2,6 +2,7 @@ package com.acechat.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,6 +19,7 @@ public class Chat {
 
 	@Id
 	@Column
+	@GeneratedValue
 	private int chatid;
 	@Column
 	private int userid;
@@ -25,5 +27,6 @@ public class Chat {
 	private String groupname;
 	@Column
 	private String status;
+	
 	
 }

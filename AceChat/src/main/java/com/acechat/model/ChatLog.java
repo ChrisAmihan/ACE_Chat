@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,6 +22,7 @@ public class ChatLog {
 
 	@Id
 	@Column
+	@GeneratedValue
 	private int chatlogid;
 	@Column
 	private int userid;
@@ -29,5 +31,5 @@ public class ChatLog {
 	@Column
 	private Timestamp senttime;
 	@Column
-	private int chatid;
+	private String groupname;
 }
