@@ -27,6 +27,7 @@ public class FriendService {
 	}
 	
 	public void requestupdate(Friend friend) {
+		friend.setStatus("Friends");
 		this.friendRepository.setFriendInfoById("Friends",friend.getFriendtableid());
 	}
 	
@@ -35,6 +36,14 @@ public class FriendService {
 	}
 	
 	public List<Friend> getall(Friend friend){
-		return this.friendRepository.findByRequesteridOrRequesteeid(friend.getRequesterid(), friend.getRequesterid());
+		List<Friend> f= this.friendRepository.findByRequesteridOrRequesteeid(friend.getRequesterid(), friend.getRequesteeid());
+		for(int i =0; i<f.size();i++) {
+			f.get(i).getRequesterid().setPassword(null);
+			f.get(i).getRequesterid().setUsername(null);
+			f.get(i).getRequesteeid().setPassword(null);
+			f.get(i).getRequesteeid().setUsername(null);
+		}
+		return f;
 	}
+
 }

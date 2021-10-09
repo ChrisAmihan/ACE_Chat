@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -21,8 +24,9 @@ public class Chat {
 	@Column
 	@GeneratedValue
 	private int chatid;
-	@Column
-	private int userid;
+	@ManyToOne
+	@JoinColumn(name="userid")
+	private User userid;
 	@Column
 	private String groupname;
 	@Column

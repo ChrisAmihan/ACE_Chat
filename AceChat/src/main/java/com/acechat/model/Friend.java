@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -21,10 +23,12 @@ public class Friend {
 	@Column
 	@GeneratedValue
 	private int friendtableid;
-	@Column
-	private int requesterid;
-	@Column
-	private int requesteeid;
+	@ManyToOne
+	@JoinColumn(name="requesterid")
+	private User requesterid;
+	@ManyToOne
+	@JoinColumn(name="requesteeid")
+	private User requesteeid;
 	@Column
 	private String status;
 	
