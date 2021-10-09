@@ -22,6 +22,7 @@ public class FriendService {
 	
 	
 	public void request(Friend friend) {
+		friend.setStatus("Pending");
 		this.friendRepository.save(friend);
 	}
 	

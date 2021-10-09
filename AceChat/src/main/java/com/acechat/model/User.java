@@ -32,8 +32,7 @@ public class User {
 	private String profilepic;
 	@Id
 	@Column	
-	@GeneratedValue(generator="userid",strategy = GenerationType.AUTO)
-	@SequenceGenerator(allocationSize = 1,name="userid",sequenceName="userid")
+	@GeneratedValue
 	private int userid;
 	
 
