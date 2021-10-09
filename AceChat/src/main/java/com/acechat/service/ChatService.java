@@ -34,6 +34,7 @@ public class ChatService {
 	}
 	
 	public void newchat(List<Chat> chat) {
+		System.out.println(chat);
 		this.chatRepository.saveAll(chat);
 	}
 	
@@ -45,9 +46,8 @@ public class ChatService {
 		this.chatRepository.setChatInfoById(chat.getStatus(), chat.getChatid());
 	}
 	
-	public List<Chat> getallchats(User user){
-		System.out.println(user);
-		return this.chatRepository.findByUserid(user.getUserid());
+	public List<Chat> getallchats(Chat chat){
+		return this.chatRepository.findByUserid(chat.getUserid());
 	}
 	
 	public List<Chat> chatsearch(Chat chat){
