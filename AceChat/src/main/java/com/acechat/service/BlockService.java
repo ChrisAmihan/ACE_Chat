@@ -1,5 +1,7 @@
 package com.acechat.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,11 @@ public class BlockService {
 
 	public void unblock(Block block) {
 		this.blockRepository.deleteByBlockusertableid(block.getBlockusertableid());
+		
+	}
+
+	public List<Block> getblocks(Block block) {
+		return this.blockRepository.findByBlockerid(block);
 		
 	}
 

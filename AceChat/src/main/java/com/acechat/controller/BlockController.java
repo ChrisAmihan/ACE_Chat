@@ -1,7 +1,10 @@
 package com.acechat.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,5 +32,10 @@ private BlockService blockService;
 	@PostMapping(path ="/unblock",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void unblock(@RequestBody Block block) {
 		this.blockService.unblock(block);
+	}
+	
+	@GetMapping(path ="/getblocks", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public List<Block> getblocks(@RequestBody Block block) {
+		return this.blockService.getblocks(block);
 	}
 }
