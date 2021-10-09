@@ -2,6 +2,7 @@ package com.acechat.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,6 +19,7 @@ public class Block {
 
 	@Id
 	@Column
+	@GeneratedValue
 	private int blockusertableid;
 	@Column
 	private int blockerid;

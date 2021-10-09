@@ -26,7 +26,6 @@ public class FriendController {
 	
 	@PostMapping(path ="/request",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void request(@RequestBody Friend friend) {
-		friend.setStatus("Pending");
 		this.friendservice.request(friend);
 	}
 	
