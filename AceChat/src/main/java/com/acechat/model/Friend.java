@@ -2,6 +2,7 @@ package com.acechat.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,13 +19,14 @@ public class Friend {
 	
 	@Id
 	@Column
+	@GeneratedValue
 	private int friendtableid;
 	@Column
 	private int requesterid;
 	@Column
 	private int requesteeid;
 	@Column
-	private int status;
+	private String status;
 	
 	
 
