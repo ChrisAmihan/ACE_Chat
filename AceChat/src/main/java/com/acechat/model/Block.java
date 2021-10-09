@@ -21,7 +21,6 @@ public class Block {
 
 	@Id
 	@Column
-	@GeneratedValue
 	private int blockusertableid;
 	@ManyToOne
 	@JoinColumn(name="blockerid")

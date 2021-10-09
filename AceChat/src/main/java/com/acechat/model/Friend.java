@@ -21,7 +21,6 @@ public class Friend {
 	
 	@Id
 	@Column
-	@GeneratedValue
 	private int friendtableid;
 	@ManyToOne
 	@JoinColumn(name="requesterid")

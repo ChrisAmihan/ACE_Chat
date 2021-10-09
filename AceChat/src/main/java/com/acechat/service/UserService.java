@@ -35,5 +35,17 @@ public class UserService {
 	public List<User> searchusers(User user){
 		return this.userRepository.findByNameContaining(user.getName());
 	}
+
+	
+
+	public User getone(User user) {
+		user= this.userRepository.findByUserid(user.getUserid());
+		user.setPassword(null);
+		return user;
+	}
+
+	public List<User> getall() {
+		return this.userRepository.findAll();
+	}
 	
 }

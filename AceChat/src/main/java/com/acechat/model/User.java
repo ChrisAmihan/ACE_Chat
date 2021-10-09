@@ -32,7 +32,6 @@ public class User {
 	private String profilepic;
 	@Id
 	@Column	
-	@GeneratedValue
 	private int userid;
 	
 

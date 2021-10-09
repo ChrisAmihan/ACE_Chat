@@ -44,4 +44,14 @@ public class UserController {
 	public List<User> searchusers(@RequestBody User user) {
 		return this.userService.searchusers(user);
 	}
+	
+	@GetMapping(path ="/getall",produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<User> getall() {
+		return this.userService.getall();
+	}
+	
+	@GetMapping(path ="/getone",produces = MediaType.APPLICATION_JSON_VALUE)
+	public User getone(@RequestBody User user) {
+		return this.userService.getone(user);
+	}
 }

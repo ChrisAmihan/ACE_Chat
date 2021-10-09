@@ -24,7 +24,6 @@ public class ChatLog {
 
 	@Id
 	@Column
-	@GeneratedValue
 	private int chatlogid;
 	@ManyToOne
 	@JoinColumn(name="userid")
