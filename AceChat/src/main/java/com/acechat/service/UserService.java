@@ -1,5 +1,7 @@
 package com.acechat.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,10 @@ public class UserService {
 	
 	public void merge(User user) {
 		this.userRepository.setUserInfoById(user.getName(),user.getPassword(),user.getProfilepic(),user.getUserid());;
+	}
+	
+	public List<User> searchusers(User user){
+		return this.userRepository.findByNameContaining(user.getName());
 	}
 	
 }

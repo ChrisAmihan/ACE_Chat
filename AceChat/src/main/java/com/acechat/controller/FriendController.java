@@ -1,5 +1,7 @@
 package com.acechat.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,23 +35,14 @@ public class FriendController {
 		this.friendservice.requestupdate(friend);
 	}
 	
-	@PostMapping(path ="/friendsearch",consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void friendsearch(@RequestBody Friend friend) {
-		
-	}
-	
 	@PostMapping(path ="/deletefriend",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void deletefriend(@RequestBody Friend friend) {
-		
+		this.friendservice.deletefriend(friend);
 	}
 	
-	@GetMapping(path ="/getallpending",produces = MediaType.APPLICATION_JSON_VALUE)
-	public void getallpending(@RequestBody Friend friend) {
-		
-	}
-	
-	@GetMapping(path ="/getallfriends",produces = MediaType.APPLICATION_JSON_VALUE)
-	public void getallfriends(@RequestBody Friend friend) {
+	@GetMapping(path ="/getall",produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Friend> getall(@RequestBody Friend friend) {
+		return this.friendservice.getall(friend);
 		
 	}
 	

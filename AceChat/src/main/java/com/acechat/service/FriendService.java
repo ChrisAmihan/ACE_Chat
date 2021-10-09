@@ -1,5 +1,7 @@
 package com.acechat.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +25,15 @@ public class FriendService {
 		this.friendRepository.save(friend);
 	}
 	
-	
 	public void requestupdate(Friend friend) {
 		this.friendRepository.setFriendInfoById("Friends",friend.getFriendtableid());
+	}
+	
+	public void deletefriend(Friend friend) {
+		this.friendRepository.deleteByFriendtableid(friend.getFriendtableid());
+	}
+	
+	public List<Friend> getall(Friend friend){
+		return this.friendRepository.findByRequesteridOrRequesteeid(friend.getRequesterid(), friend.getRequesterid());
 	}
 }
