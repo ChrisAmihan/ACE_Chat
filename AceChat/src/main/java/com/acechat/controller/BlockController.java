@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import com.acechat.service.BlockService;
 
 @RestController("BlockController")
 @RequestMapping("/block")
+@CrossOrigin(origins = "*")
 public class BlockController {
 private BlockService blockService;
 	
