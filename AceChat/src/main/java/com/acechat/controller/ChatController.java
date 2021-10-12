@@ -26,7 +26,7 @@ public class ChatController {
 		this.chatService= chatService;
 	}
 	
-	@GetMapping(path="/getgroupname")
+	@PostMapping(path="/getgroupname")
 	public List<Chat> getgroupname() {
 		return this.chatService.getall();	
 	}
@@ -48,12 +48,13 @@ public class ChatController {
 		
 	}
 	
-	@GetMapping(path ="/getallchats",produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path ="/getallchats",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Chat> getallchats(@RequestBody Chat chat) {
-		return this.chatService.getallchats(chat);
+		System.out.println(chat);
+		return null;//this.chatService.getallchats(chat);
 	}
 	
-	@GetMapping(path ="/searchchats",produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path ="/searchchats",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Chat> searchusers(@RequestBody Chat chat) {
 		return this.chatService.chatsearch(chat);
 	}

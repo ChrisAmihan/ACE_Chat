@@ -41,7 +41,7 @@ public class FriendController {
 		this.friendservice.deletefriend(friend);
 	}
 	
-	@GetMapping(path ="/getall",produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path ="/getall",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Friend> getall(@RequestBody Friend friend) {
 		return this.friendservice.getall(friend);
 		

@@ -34,12 +34,12 @@ private ChatLogService chatlogservice;
 		this.chatlogservice.newmessage(chatlog);
 	}
 	
-	@GetMapping(path ="/getallchatlogs",produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path ="/getallchatlogs",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<ChatLog> getallchatlogs(@RequestBody ChatLog chatlog) {
 		return this.chatlogservice.getallchatlogs(chatlog);
 	}
-	//TODO notification
-	@GetMapping(path ="/notification",produces = MediaType.APPLICATION_JSON_VALUE)
+	
+	@PostMapping(path ="/notification",produces = MediaType.APPLICATION_JSON_VALUE)
 	public boolean notification(@RequestBody ChatLog chatlog) {
 		return this.chatlogservice.notification(chatlog);
 	}

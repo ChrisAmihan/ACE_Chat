@@ -36,7 +36,7 @@ private BlockService blockService;
 		this.blockService.unblock(block);
 	}
 	
-	@GetMapping(path ="/getblocks", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path ="/getblocks", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public List<Block> getblocks(@RequestBody Block block) {
 		return this.blockService.getblocks(block);
 	}

@@ -34,7 +34,11 @@ public class UserController {
 	@PostMapping(path="/login",consumes=MediaType.APPLICATION_JSON_VALUE)
 	public int login(@RequestBody User user) {
 		user=this.userService.findByUsernameAndPassword(user);
+		try {
 		return user.getUserid();
+		}catch(java.lang.NullPointerException e) {
+			return 0;
+		}
 	}
 	
 	@PostMapping(path="/updateaccount",consumes=MediaType.APPLICATION_JSON_VALUE)
@@ -52,7 +56,7 @@ public class UserController {
 		return this.userService.getall();
 	}
 	
-	@GetMapping(path ="/getone",produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path ="/getone",produces = MediaType.APPLICATION_JSON_VALUE)
 	public User getone(@RequestBody User user) {
 		return this.userService.getone(user);
 	}
