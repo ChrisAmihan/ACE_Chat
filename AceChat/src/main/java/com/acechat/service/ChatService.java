@@ -46,8 +46,9 @@ public class ChatService {
 		this.chatRepository.setChatInfoById(chat.getStatus(), chat.getChatid());
 	}
 	
-	public List<Chat> getallchats(Chat chat){
-		return this.chatRepository.findByUserid(chat.getUserid());
+	public List<Chat> getallchats(User chat){
+		System.out.println(this.chatRepository.findByUserid(chat));
+		return this.chatRepository.findByUserid(chat);
 	}
 	
 	public List<Chat> chatsearch(Chat chat){

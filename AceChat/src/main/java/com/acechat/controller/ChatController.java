@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.acechat.model.Chat;
+import com.acechat.model.User;
 import com.acechat.service.ChatService;
 
 @RestController("ChatController")
@@ -49,9 +50,8 @@ public class ChatController {
 	}
 	
 	@PostMapping(path ="/getallchats",produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Chat> getallchats(@RequestBody Chat chat) {
-		System.out.println(chat);
-		return null;//this.chatService.getallchats(chat);
+	public List<Chat> getallchats(@RequestBody User chat) {
+		return this.chatService.getallchats(chat);
 	}
 	
 	@PostMapping(path ="/searchchats",produces = MediaType.APPLICATION_JSON_VALUE)

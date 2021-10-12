@@ -22,6 +22,7 @@ public class Chat {
 
 	@Id
 	@Column
+	@GeneratedValue
 	private int chatid;
 	@ManyToOne
 	@JoinColumn(name="userid")
