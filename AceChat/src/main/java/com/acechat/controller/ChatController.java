@@ -55,7 +55,7 @@ public class ChatController {
 	}
 	
 	@PostMapping(path ="/searchchats",produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Chat> searchusers(@RequestBody Chat chat) {
-		return this.chatService.chatsearch(chat);
+	public List<Chat> searchusers(@RequestBody User user) {
+		return this.chatService.chatsearch(user);
 	}
 }

@@ -32,5 +32,4 @@ public class Chat {
 	@Column
 	private String status;
 	
-	
 }
