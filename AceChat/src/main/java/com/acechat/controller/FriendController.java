@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,8 +42,14 @@ public class FriendController {
 	
 	@PostMapping(path ="/getall",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Friend> getall(@RequestBody Friend friend) {
-		return this.friendservice.getall(friend);
-		
+		List<Friend> f= this.friendservice.getall(friend);
+		for(int i =0; i<f.size();i++) {
+			f.get(i).getRequesterid().setPassword(null);
+			f.get(i).getRequesterid().setUsername(null);
+			f.get(i).getRequesteeid().setPassword(null);
+			f.get(i).getRequesteeid().setUsername(null);
+		}
+		return f;
 	}
 	
 }

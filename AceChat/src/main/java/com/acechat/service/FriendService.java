@@ -36,14 +36,7 @@ public class FriendService {
 	}
 	
 	public List<Friend> getall(Friend friend){
-		List<Friend> f= this.friendRepository.findByRequesteridOrRequesteeid(friend.getRequesterid(), friend.getRequesteeid());
-		for(int i =0; i<f.size();i++) {
-			f.get(i).getRequesterid().setPassword(null);
-			f.get(i).getRequesterid().setUsername(null);
-			f.get(i).getRequesteeid().setPassword(null);
-			f.get(i).getRequesteeid().setUsername(null);
-		}
-		return f;
+		return this.friendRepository.findByRequesteridOrRequesteeid(friend.getRequesterid(), friend.getRequesteeid());
 	}
 
 }
