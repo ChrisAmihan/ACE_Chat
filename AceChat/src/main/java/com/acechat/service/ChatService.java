@@ -33,8 +33,8 @@ public class ChatService {
 		
 	}
 	
-	public void newchat(List<Chat> chat) {
-		this.chatRepository.saveAll(chat);
+	public void newchat(Chat chat) {
+		this.chatRepository.save(chat);
 	}
 	
 	public void deletechat(Chat chat) {
@@ -51,6 +51,10 @@ public class ChatService {
 	
 	public List<Chat> chatsearch(User user){
 		return this.chatRepository.findByGroupnameContainingAndUserid(user.getName(),user);
+	}
+
+	public Chat getone(Chat chat) {
+		return this.chatRepository.findByChatid(chat.getChatid());
 	}
 
 }

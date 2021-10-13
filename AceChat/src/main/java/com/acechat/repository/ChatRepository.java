@@ -12,7 +12,7 @@ import com.acechat.model.User;
 
 @Repository
 public interface ChatRepository extends JpaRepository<Chat, Integer>{
-	<S extends Chat> List<S> saveAll(Iterable<S> chat);
+	public <S extends Chat> S save(S chat);
 	List<Chat> findAll();
 	public void deleteByChatid(int chatid);
 	public List<Chat> findByUserid(User user);
@@ -21,4 +21,5 @@ public interface ChatRepository extends JpaRepository<Chat, Integer>{
 	@Modifying
 	@Query("update Chat c set c.status = ?1 where c.chatid =?2")
 	void setChatInfoById(String status, int chatid);
+	public Chat findByChatid(int chatid);
 }

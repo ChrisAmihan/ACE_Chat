@@ -39,8 +39,4 @@ private ChatLogService chatlogservice;
 		return this.chatlogservice.getallchatlogs(chatlog);
 	}
 	
-	@PostMapping(path ="/notification",produces = MediaType.APPLICATION_JSON_VALUE)
-	public boolean notification(@RequestBody ChatLog chatlog) {
-		return this.chatlogservice.notification(chatlog);
-	}
 }

@@ -31,7 +31,7 @@ public class BlockService {
 	}
 
 	public List<Block> getblocks(Block block) {
-		return this.blockRepository.findByBlockerid(block);
+		return this.blockRepository.findByBlockerid(block.getBlockerid());
 		
 	}
 

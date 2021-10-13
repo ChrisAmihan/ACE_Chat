@@ -27,16 +27,6 @@ public class ChatLogService {
 	public List<ChatLog> getallchatlogs(ChatLog chatlog) {
 		return this.chatlogRepository.findByGroupnameOrderBySenttimeAsc(chatlog.getGroupname());
 	}
-
-	public boolean notification(ChatLog chatlog) {
-		List<ChatLog> cl = this.chatlogRepository.findByGroupnameOrderBySenttimeAsc(chatlog.getGroupname());
-		if(cl.size()!=0) {
-		if(cl.get(cl.size()-1).getChatlogid() !=chatlog.getChatlogid()) {
-			return true;
-		}
-		}
-		return false;
-	}
 	
 	
 }

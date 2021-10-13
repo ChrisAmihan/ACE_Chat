@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.acechat.model.Block;
+import com.acechat.model.User;
 
 @Repository
 public interface BlockRepository extends JpaRepository<Block,Integer>{
@@ -13,5 +14,5 @@ public interface BlockRepository extends JpaRepository<Block,Integer>{
 
 	public void deleteByBlockusertableid(int blockusertableid);
 
-	public List<Block> findByBlockerid(Block block);
+	public List<Block> findByBlockerid(User user);
 }

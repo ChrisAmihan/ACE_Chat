@@ -40,7 +40,6 @@ public class UserService {
 
 	public User getone(User user) {
 		user= this.userRepository.findByUserid(user.getUserid());
-		user.setPassword(null);
 		return user;
 	}
 

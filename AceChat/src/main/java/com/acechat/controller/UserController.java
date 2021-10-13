@@ -43,12 +43,27 @@ public class UserController {
 	
 	@PostMapping(path="/updateaccount",consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void updateaccount(@RequestBody User user) {
+		User currentuser = this.userService.getone(user);
+		if(user.getProfilepic() == "") {
+			user.setProfilepic(currentuser.getProfilepic());
+		}
+		if(user.getPassword()=="") {
+			user.setPassword(currentuser.getPassword());
+		}
+		if(user.getName()=="") {
+			user.setName(currentuser.getName());
+		}
 		this.userService.merge(user);
 	}
 	
-	@GetMapping(path ="/searchusers",produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path ="/searchusers",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<User> searchusers(@RequestBody User user) {
-		return this.userService.searchusers(user);
+		List<User> list = this.userService.searchusers(user);
+		for(int i=0;i<list.size();i++) {
+			list.get(i).setUsername(null);
+			list.get(i).setPassword(null);
+		}
+		return list;
 	}
 	
 	@GetMapping(path ="/getall",produces = MediaType.APPLICATION_JSON_VALUE)
@@ -58,6 +73,8 @@ public class UserController {
 	
 	@PostMapping(path ="/getone",produces = MediaType.APPLICATION_JSON_VALUE)
 	public User getone(@RequestBody User user) {
-		return this.userService.getone(user);
+		user = this.userService.getone(user);
+		user.setPassword(null);
+		return user;
 	}
 }

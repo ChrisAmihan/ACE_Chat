@@ -33,8 +33,7 @@ public class ChatController {
 	}
 	
 	@PostMapping(path="/newchat", consumes= MediaType.APPLICATION_JSON_VALUE)
-	public void newchat(@RequestBody List<Chat> chat) {
-		System.out.println(chat);
+	public void newchat(@RequestBody Chat chat) {
 		this.chatService.newchat(chat);
 	}
 	
@@ -57,5 +56,10 @@ public class ChatController {
 	@PostMapping(path ="/searchchats",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Chat> searchusers(@RequestBody User user) {
 		return this.chatService.chatsearch(user);
+	}
+	
+	@PostMapping(path ="/getone",produces = MediaType.APPLICATION_JSON_VALUE)
+	public Chat getone(@RequestBody Chat chat) {
+		return this.chatService.getone(chat);
 	}
 }
