@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.acechat.model.Block;
 import com.acechat.model.User;
 
-@Repository
+@Repository("BlockRepository")
 public interface BlockRepository extends JpaRepository<Block,Integer>{
 	public <S extends Block> S save(S block);
 
