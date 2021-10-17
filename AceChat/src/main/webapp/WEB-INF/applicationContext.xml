@@ -33,7 +33,7 @@ within this file. Recall that a Spring Bean has its lifecycle managed by the IOC
 	
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
-		<property name="packagesToScan" value="com.revature.model"></property>
+		<property name="packagesToScan" value="com.acechat.model"></property>
 		<property name ="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"></bean>
 		</property>
