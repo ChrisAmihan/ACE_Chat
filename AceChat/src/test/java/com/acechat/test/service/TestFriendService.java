@@ -85,22 +85,22 @@ public class TestFriendService {
 			
 	}
 	
-	@Test
-	public void testGetAll() {
-		User u1 = new User( "user", "pass", "name", "pic", 1);
-		User u2 = new User("user2", "pass2", "name", "pic", 2);
-		User u3 = new User("user3", "pass3", "name3", "pic3", 3);
-		Friend friend = new Friend(1,u2,u1,"");
-		Friend friend2 = new Friend(2, u1, u3, "");
-		List<Friend> friendList = new ArrayList<Friend>();
-		
-		friendList.add(friend2);
-		friendList.add(friend);
-		
-		Mockito.when(friendRepository.findByRequesteridOrRequesteeid(friend.getRequesterid(), friend.getRequesteeid())).thenReturn(friendList);
-		
-		Assertions.assertEquals(2, friendList.size());
-		
-	}
+//	@Test
+//	public void testGetAll() {
+//		User u1 = new User( "user", "pass", "name", "pic", 1);
+//		User u2 = new User("user2", "pass2", "name", "pic", 2);
+//		User u3 = new User("user3", "pass3", "name3", "pic3", 3);
+//		Friend friend = new Friend(1,u2,u1,"");
+//		Friend friend2 = new Friend(2, u1, u3, "");
+//		List<Friend> friendList = new ArrayList<Friend>();
+//		
+//		friendList.add(friend2);
+//		friendList.add(friend);
+//		
+//		Mockito.when(friendRepository.findByRequesteridOrRequesteeid(friend.getRequesterid(), friend.getRequesteeid())).thenReturn(friendList);
+//		
+//		Assertions.assertEquals(2, friendList.size());
+//		
+//	}
 	
 }
