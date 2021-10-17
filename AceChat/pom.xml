@@ -10,7 +10,6 @@
 	</parent>
 	<groupId>com.acechat</groupId>
 	<artifactId>AceChat</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>AceChat</name>
 	<description>Demo project for Spring Boot</description>
 	<packaging>war</packaging>
@@ -23,6 +22,11 @@
 	
 	
 	<dependencies>
+	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -59,7 +63,6 @@
 		<dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.17</version>
         </dependency>
        <dependency>
 			<groupId>io.rest-assured</groupId>
