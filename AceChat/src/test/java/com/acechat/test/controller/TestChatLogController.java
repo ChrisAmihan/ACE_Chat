@@ -12,11 +12,14 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
-import org.junit.runner.RunWith;
+
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -29,15 +32,14 @@ import com.acechat.model.User;
 import com.acechat.service.ChatLogService;
 
 @TestInstance(Lifecycle.PER_CLASS)
-@ContextConfiguration(locations = "classpath:testApplicationContexts.xml")
-@WebAppConfiguration
-@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest
+@AutoConfigureMockMvc
 public class TestChatLogController {
 	@Mock
 	private ChatLogService chatLogService;
 	@InjectMocks
 	private ChatLogController chatLogController;
-	
+	@Autowired
 	private MockMvc mockMvc;
 	@BeforeAll
 	public void setup() {
