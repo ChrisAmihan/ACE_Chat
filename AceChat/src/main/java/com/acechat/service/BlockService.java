@@ -15,7 +15,7 @@ import com.acechat.repository.BlockRepository;
 public class BlockService {
 	private BlockRepository blockRepository;
 
-	@Autowired
+	@Autowired(required = false)
 	public BlockService(BlockRepository blockRepository) {
 		this.blockRepository = blockRepository;
 	}
