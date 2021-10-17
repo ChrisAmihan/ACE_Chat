@@ -18,7 +18,7 @@ within this file. Recall that a Spring Bean has its lifecycle managed by the IOC
 
 	<context:annotation-config/>
 	<!-- You have to tell Spring which packages it should scan for annotations. -->
-	<context:component-scan base-package="com.revature.service;com.revature.repository;com.revature.aspect"></context:component-scan>
+	<context:component-scan base-package="com.acechat"></context:component-scan>
 
 	<tx:annotation-driven/>
 
