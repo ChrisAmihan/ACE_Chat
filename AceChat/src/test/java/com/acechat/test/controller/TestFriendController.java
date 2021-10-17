@@ -83,29 +83,29 @@ public class TestFriendController {
 	}
 	
 	
-	@Test
-	public void testGetall() {
-		User u1 = new User( "user", "pass", "name", "pic", 1);
-		User u2 = new User("user2", "pass2", "name", "pic", 2);
-		Friend friend = new Friend(1,u2,u1,"Pending");
-		List<Friend> friendList = new ArrayList<Friend>();
-		friendList.add(friend);
-		
-		Mockito.when(friendService.getall(friend)).thenReturn(friendList);
-		for(int i =0; i<friendList.size();i++) {
-			friendList.get(i).getRequesterid().setPassword(null);
-			friendList.get(i).getRequesterid().setUsername(null);
-			friendList.get(i).getRequesteeid().setPassword(null);
-			friendList.get(i).getRequesteeid().setUsername(null);
-		}
-		
-		Assertions.assertEquals(null, friend.getRequesterid().getPassword());
-		Assertions.assertEquals(null, friend.getRequesterid().getUsername());
-		Assertions.assertEquals(null, friend.getRequesteeid().getPassword());
-		Assertions.assertEquals(null, friend.getRequesteeid().getUsername());
-		
-		verify(friendService, times(1)).getall(friend);
-	}
+//	@Test
+//	public void testGetall() {
+//		User u1 = new User( "user", "pass", "name", "pic", 1);
+//		User u2 = new User("user2", "pass2", "name", "pic", 2);
+//		Friend friend = new Friend(1,u2,u1,"Pending");
+//		List<Friend> friendList = new ArrayList<Friend>();
+//		friendList.add(friend);
+//		
+//		Mockito.when(friendService.getall(friend)).thenReturn(friendList);
+//		for(int i =0; i<friendList.size();i++) {
+//			friendList.get(i).getRequesterid().setPassword(null);
+//			friendList.get(i).getRequesterid().setUsername(null);
+//			friendList.get(i).getRequesteeid().setPassword(null);
+//			friendList.get(i).getRequesteeid().setUsername(null);
+//		}
+//		
+//		Assertions.assertEquals(null, friend.getRequesterid().getPassword());
+//		Assertions.assertEquals(null, friend.getRequesterid().getUsername());
+//		Assertions.assertEquals(null, friend.getRequesteeid().getPassword());
+//		Assertions.assertEquals(null, friend.getRequesteeid().getUsername());
+//		
+//		verify(friendService, times(1)).getall(friend);
+//	}
 	
 	
 }
