@@ -13,9 +13,9 @@ import com.acechat.repository.BlockRepository;
 @Transactional
 @Service("BlockService")
 public class BlockService {
+	@Autowired
 	private BlockRepository blockRepository;
 
-	@Autowired
 	public BlockService(BlockRepository blockRepository) {
 		this.blockRepository = blockRepository;
 	}
